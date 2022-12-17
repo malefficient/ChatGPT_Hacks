@@ -7,7 +7,7 @@ import os
 import random
 from random import choice as rando
 from time import sleep
-assert os.environ["OPENAI_API_KEY"] != None, "No OpenAI API key provided. Please go get one..f.ex: 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"
+print("##Using api key: %s" % (os.environ["OPENAI_API_KEY"]))
 
 log_file = open('chat-log.txt', 'a+')
 
