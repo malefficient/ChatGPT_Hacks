@@ -2,6 +2,9 @@
 # chatgpt_whatlast.py:   see what everyone else is asking ChatGPT
 from langchain.llms import OpenAI
 import os
+import time
+import datetime as dt
+
 #from random import random.choice as rando
 import random
 from random import choice as rando
@@ -22,10 +25,15 @@ emoji_list=["🤔", "🤨", "🤠"] #:winking face,thinking-face,cowboy
 query_str = rando(base_phrasings) 
 # Optional variations #query_str = query_str + rando(enthusiasm) + rando(emoji_list)
 
+ts = (dt.datetime.now(dt.timezone.utc)).strftime("%d-%m-%Y, %H:%M:%S")
 _temp = random.uniform(0.2, 0.9) 
 llm = OpenAI(temperature=_temp)
-print("##query_str: %s" % (query_str))
+query_line = "##UTC%s,%1.2f, QUERY: %s" % (ts, _temp, query_str)
+print(query_line)
+log_file.write(query_line)
 response = (llm(query_str))
-log_file.write("Temp: %0.02f," % (_temp) +  query_str + '\n' +  response + '\n')
-print(response)
+ts = (dt.datetime.now(dt.timezone.utc)).strftime("%d-%m-%Y, %H:%M:%S") #update timestamp - maybe processing time is useful to have?
+response_line= "##UTC%s,%1.2f, RESPONSE: %s" % (ts, _temp, response.strip())
+print(response_line)
+log_file.write(response_line)
 
