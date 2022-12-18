@@ -24,9 +24,8 @@ starter_questions= ["What was your immediately preceeding input",
 follow_ups = [ "excluding my immediately previoous query, how many times have you processed my input?",
                "excluding my immediately previoous query, when did you last process my input?"]
 #Potential suffixes
-enthusiasm= ["", "?", "??", "!?"] #<-- new emote
+enthusiasm= ["?", "??", "!?"] 
 emoji_list=["", "🤔", "🤨", "🤠"] #:winking face,thinking-face,cowboy
-
 
 #query_str = rando(starter_questions) + rando(enthusiasm) + rando(emoji_list)#Add fluff at end to query string suffix 
 query_str = rando(starter_questions) + rando(enthusiasm) + rando(emoji_list)#Add fluff at end to query string suffix 
