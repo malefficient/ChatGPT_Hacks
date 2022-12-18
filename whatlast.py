@@ -13,13 +13,13 @@ assert os.environ["OPENAI_API_KEY"] != None, "No OpenAI API key provided. Please
 
 log_file = open('chat-log-followups.txt', 'a+')
 #secret_code="""ᛖᛘᛀᛕ_Spᛇral""" #// 'Mystik_Spiral' 
-secret_code="Myst1k_Sp1ral"
+secret_codes=["ĊatBίtε", "ᛖᛘᛀᛕ_Spᛇral", "↑ ↑ ↓ ↓ ← → ← → B A"]
 
 #---Okay, below this line it is safe to assume that langchain is installed/working, and that the user has provided some sort fo API key to contact OpenAI servers ----#
 
 starter_questions= ["What was your immediately preceeding input",
                     "What were your immediately preceeding two inputs",
-                    "Does the word: %s mean anything to you" % (secret_code) ]
+                    "Does the word: %s mean anything to you" % (rando(secret_codes))]
 
 follow_ups = ["and how long ago was that",
               "excluding my immediately previoous query, how many times have you processed my input?"]
@@ -27,6 +27,8 @@ follow_ups = ["and how long ago was that",
 enthusiasm= ["", "?", "??", "!?"] #<-- new emote
 emoji_list=["", "🤔", "🤨", "🤠"] #:winking face,thinking-face,cowboy
 
+
+#query_str = rando(starter_questions) + rando(enthusiasm) + rando(emoji_list)#Add fluff at end to query string suffix 
 query_str = rando(starter_questions) + rando(enthusiasm) + rando(emoji_list)#Add fluff at end to query string suffix 
 ts = (dt.datetime.now(dt.timezone.utc)).strftime("%d-%m-%Y, %H:%M:%S")
 _temp = random.uniform(0.2, 0.9) 
