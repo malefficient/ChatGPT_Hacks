@@ -21,8 +21,8 @@ starter_questions= ["What was your immediately preceeding input",
                     "What were your immediately preceeding two inputs",
                     "Does the word: %s mean anything to you" % (rando(secret_codes))]
 
-follow_ups = ["and how long ago was that",
-              "excluding my immediately previoous query, how many times have you processed my input?"]
+follow_ups = [ "excluding my immediately previoous query, how many times have you processed my input?",
+               "excluding my immediately previoous query, when did you last process my input?"]
 #Potential suffixes
 enthusiasm= ["", "?", "??", "!?"] #<-- new emote
 emoji_list=["", "🤔", "🤨", "🤠"] #:winking face,thinking-face,cowboy
